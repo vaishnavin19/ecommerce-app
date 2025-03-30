@@ -1,0 +1,121 @@
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative; 
+}
+
+.app-header {
+  background: #007bff;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 20px;
+  align-items: start;
+}
+
+.product-list-container {
+  grid-column: 1;
+}
+
+.shopping-cart-container {
+  grid-column: 2;
+  position: sticky;
+  top: 20px;
+}
+
+
+.chat-toggle-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chat-toggle-button:hover {
+  background-color: #0056b3;
+}
+
+.unread-count {
+  background-color: #ff4757;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+
+.chat-popup-container {
+  position: fixed;
+  bottom: 80px;
+  right: 30px;
+  width: 350px;
+  max-height: 500px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  z-index: 101;
+  display: flex;
+  flex-direction: column;
+}
+
+body.chat-open {
+  overflow: hidden;
+}
+.loading-message,
+.no-products-message {
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  grid-column: 1;
+  min-height: 200px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-products-message {
+  font-style: italic;
+}
+
+.search-bar {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+}
+
+.search-bar button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #0056b3;
+}
