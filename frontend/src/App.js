@@ -53,7 +53,10 @@ function App() {
   };
 
   const removeFromCart = (productId) => {
-    setCart(cart.filter(item => item._id !== productId));
+    const index = cart.findIndex(item => item._id === productId);
+    if (index !== -1) {
+      setCart([...cart.slice(0, index), ...cart.slice(index + 1)]);
+    }
   };
 
   return (
@@ -67,7 +70,11 @@ function App() {
       <div className="content">
         <div className="product-list-container">
           {isSearching ? (
-            <div className="loading-message">Searching...</div>
+            searchQuery ? (
+              <div className="loading-message">Searching...</div>
+            ) : (
+              <div className="loading-message">Loading...</div>
+            )
           ) : products.length === 0 && searchQuery ? (
             <div className="no-products-message">No products found</div>
           ) : (
