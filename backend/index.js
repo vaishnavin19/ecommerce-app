@@ -8,7 +8,7 @@ require('dotenv').config();
 const app = express();
 
 app.use(cors({
-  origin: ["https://ecommerce-app-puce-five.vercel.app/", "https://ecommerce-app-latest.vercel.app"],
+  origin: ["https://ecommerce-app-puce-five.vercel.app", "https://ecommerce-app-latest.vercel.app"],
   methods: ["GET", "POST"],
 }));
 app.use(express.json());
